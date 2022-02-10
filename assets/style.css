@@ -14,7 +14,6 @@ body {
 
 .game-container {
     text-align: center;
-    position: relative;
 }
 
 .top-half {
@@ -27,7 +26,6 @@ body {
     display: inline-block;
     margin: 5px;
     border-radius: 5px;
-    position: absolute;
 }
 
 .game-square:hover {
@@ -55,5 +53,4 @@ body {
     font-size: 18px;
     text-align: center;
     color:#7e7f9a;
-    margin-top: 550px;
 }
