@@ -7,9 +7,12 @@ body {
 
 .title {
     font-family: "Nova Square";
-    font-size: 32px;
     text-align: center;
     color: #7e7f9a;
+}
+
+.title h1 {
+    font-size: 60px;
 }
 
 .game-container {
@@ -17,7 +20,7 @@ body {
 }
 
 .top-half {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .game-square {
@@ -32,25 +35,45 @@ body {
     border: 1px solid white;
 }
 
+/*Square default colours*/
 .square-1 {
-    background-color: #5DD9C1;
+    background: rgb(93, 217, 193);
 }
 
 .square-2 {
-    background-color: #F3B61F;
+    background: rgb(243, 182, 31);
 }
 
 .square-3 {
-    background-color: #A31621;
+    background: rgb(163, 22, 33);
 }
 
 .square-4 {
-    background-color: #5d69d9;
+    background: rgb(93, 105, 217);
 }
+
+/* Flash classes to indicate sequence to user*/
+.square-1-flash {
+    background: rgba(93, 217, 193, 0.3);
+}
+
+.square-2-flash {
+    background: rgba(243, 182, 31, 0.3);
+}
+
+.square-3-flash {
+    background: rgba(163, 22, 33, 0.3);
+}
+
+.square-4-flash {
+    background: rgba(93, 105, 217, 0.3);
+}
+
 
 .score-container {
     font-family: "Nova Square";
     font-size: 18px;
     text-align: center;
     color:#7e7f9a;
+    margin-top:35px;
 }
