@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css" type="text/css">
     <title>Square Simon</title>
 </head>
 <body>
     <div class="title">
         <h1>SQUARE SIMON</h1>
         <p>Copy the sequence, see how far you can get!</p>
-        <button class="start-button">START GAME!</button>
+        <button onclick="clickButton()"class="start-button">START GAME!</button>
     </div>
     <div class ="game-container top-half">
         <div class="game-square square-1"></div>
@@ -22,9 +22,11 @@
         <div class="game-square square-4"></div>
     </div>
     <div class ="score-container">
-        <p>Current Score:<span class="current-score""> 0</span></p>
+        <p>Current Score:<span class="current-score"> 0</span></p>
         <p>High Score:<span class="high-score"> 0</span></p>
         <button class="reset-button">Reset</button>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/script.js"></script>
 </body>
 </html>

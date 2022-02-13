@@ -52,7 +52,7 @@ body {
     background: rgb(93, 105, 217);
 }
 
-/* Flash classes to indicate sequence to user*/
+/* Flash classes to indicate sequence to user*/ /*
 .square-1-flash {
     background: rgba(93, 217, 193, 0.3);
 }
@@ -68,7 +68,10 @@ body {
 .square-4-flash {
     background: rgba(93, 105, 217, 0.3);
 }
-
+Classes no longer used, opaque class below can be applied to any div to achieve same goal */
+.opaque {
+    opacity: 0.3;
+}
 
 .score-container {
     font-family: "Nova Square";
