@@ -31,6 +31,7 @@ body {
     border-radius: 5px;
 }
 
+/*User is aware of current square they are hovering with cursor*/
 .game-square:hover {
     border: 1px solid white;
 }
