@@ -28,8 +28,6 @@ function randomSquare() {
     return squares[r];
   };
 
-randomSquare();
-
 // Pushes a random square aquired from randomSquare into currentGameSeq array.
 function gameFunction() {
     currentGameSeq.push(randomSquare());
@@ -68,3 +66,33 @@ function arraysEqual(a, b) {
     }
     return true;
   }
+
+function startGame() {
+    userSeq = [];
+    currentGameSeq = [];
+    gameFunction();
+    flashing();
+    Score = 0;
+    document.querySelector(".current-score").innerHTML =" "+Score;
+};
+
+highScore = 0;
+
+function check() {
+    if (arraysEqual(userSeq, currentGameSeq)) {
+        userSeq = [];
+        gameFunction();
+        flashing();
+        Score++;
+        document.querySelector(".current-score").innerHTML =" "+Score;
+        if (highScore < Score) {
+            document.querySelector(".high-score").innerHTML = " "+Score;
+            highScore = Score;
+        }
+    }
+    else {
+        alert(`GAME OVER! You got ${Score} points! Click start game button to play again.`)
+        document.querySelector(".high-score").innerHTML = " "+Score;
+        highScore = Score;
+    }
+}
