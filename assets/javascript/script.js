@@ -6,8 +6,8 @@ const fourthSquare = document.querySelector(".square-4");
 const startButton = document.querySelector(".start-game");
 let currentGameSeq = [];
 let userSeq = [];
-let currentScore = document.querySelector(".current-score").innerHTML;
-let highScore = document.querySelector(".high-score").innerHTML;
+var sound1 = document.getElementById("sound-1"); 
+var sound2 = document.getElementById("sound-2"); 
 
 $(".square-1").click(function() {
     userSeq.push(firstSquare);
@@ -31,13 +31,14 @@ function randomSquare() {
 // Pushes a random square aquired from randomSquare into currentGameSeq array.
 function gameFunction() {
     currentGameSeq.push(randomSquare());
-    console.log(currentGameSeq);
 };
 
-// Adds then removes opaque css class to square using timeout inside promise, to create flashing effect.
+// Adds then removes opaque css class to square using timeout inside promise, to create flashing effect. 
+// Uses .classList.add/remove because using vanilla js.
 function flashSquare(square) {
     return new Promise((resolve) => {
         square.classList.add("opaque");
+        sound1.play();
         setTimeout(() => {
             (square.classList.remove("opaque"));
             setTimeout(() => {
@@ -47,7 +48,7 @@ function flashSquare(square) {
     });
 };
 
-// Indicates game sequence by calling flashSquare on currentGameSeq, array using async function to await each flash. 
+// Indicates game sequence by calling flashSquare on currentGameSeq array, using async function to await each flash. 
 async function flashing() {
     for (let square of currentGameSeq) {
         await flashSquare(square);
@@ -67,6 +68,7 @@ function arraysEqual(a, b) {
     return true;
   }
 
+// startGame called when start game button is clicked. Clears all sequence array's and calls gameFunction and flashing to begin level 1. 
 function startGame() {
     userSeq = [];
     currentGameSeq = [];
@@ -78,6 +80,8 @@ function startGame() {
 
 highScore = 0;
 
+// Checks if user input is correct and implements another level to the game. Clears userSeq (otherwise array would stack with inputs from each level)
+// and increments score. If user input incorrect ends game with alert. 
 function check() {
     if (arraysEqual(userSeq, currentGameSeq)) {
         userSeq = [];
@@ -96,3 +100,19 @@ function check() {
         highScore = Score;
     }
 }
+
+// Short square flash to better indicate user has clicked on a square.
+// Uses .add/removeClass because using jquery. 
+$(".game-square").click(function(){
+    return new Promise((resolve) => {
+        $(this).addClass("opaque");
+        sound2.play();
+        setTimeout(() => {
+            ($(this).removeClass("opaque"));
+            setTimeout(() => {
+                resolve();
+            }, 300);
+        }, 300);
+    });
+})
+

@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 
-
 body {
     background: #272838;
-}
-
-.title {
     font-family: "Nova Square";
     text-align: center;
     color: #7e7f9a;
@@ -13,14 +9,11 @@ body {
 
 .title h1 {
     font-size: 60px;
-}
-
-.game-container {
-    text-align: center;
+    margin: 20px 0 20px 0;
 }
 
 .top-half {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .game-square {
@@ -31,7 +24,7 @@ body {
     border-radius: 5px;
 }
 
-/*User is aware of current square they are hovering with cursor*/
+/*User is better aware of current square they are hovering with cursor*/
 .game-square:hover {
     border: 1px solid white;
 }
@@ -53,31 +46,29 @@ body {
     background: rgb(93, 105, 217);
 }
 
-/* Flash classes to indicate sequence to user*/ /*
-.square-1-flash {
-    background: rgba(93, 217, 193, 0.3);
-}
-
-.square-2-flash {
-    background: rgba(243, 182, 31, 0.3);
-}
-
-.square-3-flash {
-    background: rgba(163, 22, 33, 0.3);
-}
-
-.square-4-flash {
-    background: rgba(93, 105, 217, 0.3);
-}
-Classes no longer used, opaque class below can be applied to any div to achieve same goal */
+/*Opaque class to indicate square flashing*/
 .opaque {
     opacity: 0.3;
 }
 
-.score-container {
+button {
     font-family: "Nova Square";
+    background-color: #7e7f9a;
+    color: #272838;
+    border-radius: 4px;
+    height: 50px;
+    width: 70px;
+}
+
+.score-container {
     font-size: 18px;
-    text-align: center;
-    color:#7e7f9a;
     margin-top:35px;
+}
+
+/*Squares smaller for mobile devices*/
+@media only screen and (max-width: 500px) {
+    .game-square {
+        width: 100px;
+        height: 100px;
+    }
 }
