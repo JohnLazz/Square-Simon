@@ -3,7 +3,7 @@
 
 ## Code institute Milestone Project 2 showcasing javascript.
 
-[Click here for the live project.]()
+[Click here for the live project.](https://johnlazz.github.io/Square-Simon/)
 
 Here is a screenshot of the finished game. 
 
